@@ -172,6 +172,16 @@ python3 app/ingest.py
 
 Open [http://localhost:8501](http://localhost:8501)
 
+## Evaluation Results
+
+| Metric | Score |
+|--------|-------|
+| Avg Precision@5 | 0.92 |
+| Avg MRR | 0.90 |
+| Avg Faithfulness | 0.68 |
+
+Run evaluation: `python3 app/evaluate.py`
+
 ---
 
 ## Usage

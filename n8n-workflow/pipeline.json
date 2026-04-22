@@ -1,0 +1,68 @@
+{
+  "name": "Weekly Review Ingestion",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                1
+              ],
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -784,
+        -48
+      ],
+      "id": "8d35e4db-cc0b-481b-b017-de53e782c64f",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://172.24.158.44:8502/ingest",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        -560,
+        -48
+      ],
+      "id": "23ecc8ce-89c4-4861-abcc-3cc5a673e588",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "ff0bc2f8-921e-49da-ab7b-003cc209466c",
+  "meta": {
+    "instanceId": "30d700a1921d50fcbe7c211269bc0cee7ae5c2776d9316c25612297406f820fb"
+  },
+  "id": "YyoURSBSknhvoVda",
+  "tags": []
+}

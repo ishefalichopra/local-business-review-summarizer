@@ -1,0 +1,9 @@
+qdrant-client
+sentence-transformers
+groq
+streamlit
+python-dotenv
+langchain-text-splitters
+pandas
+tqdm
+rank-bm25
